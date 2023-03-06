@@ -4,11 +4,13 @@ from requests import post
 import base64
 import json
 
-CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+load_dotenv()
+client_ID = os.getenv('CLIENT_ID')
+client_secret = os.getenv('CLIENT_SECRET')
+print(client_ID, client_secret)
 
 def get_token():
-    auth_string = CLIENT_ID + ":" + CLIENT_SECRET
+    auth_string = client_ID + ":" + client_secret
     auth_bytes = auth_string.encode("utf-8")
     auth_base64 = str(base64.b64encode(auth_bytes), "utf-8")
 
@@ -33,5 +35,5 @@ def main():
     auth_header = get_auth_header(token)
 
 
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+    #main()
