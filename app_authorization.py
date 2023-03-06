@@ -1,11 +1,11 @@
-from requests import post
 import os
+from dotenv import load_dotenv
+from requests import post
 import base64
 import json
 
-## from TEST APP in developer Dashboard
-CLIENT_ID = "5a7aaaee3e1d455c8d8e14d43fc1d1b0"
-CLIENT_SECRET = "8ab3610d092949dd9ebbe6342fdc2e34"
+CLIENT_ID = os.getenv("CLIENT_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 
 def get_token():
     auth_string = CLIENT_ID + ":" + CLIENT_SECRET
