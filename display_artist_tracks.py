@@ -24,5 +24,10 @@ def get_token():
     return token
 
 
-token = get_token()
-print(token)
+def main():
+    token = get_token()
+    print(token)
+
+
+if __name__ == '__main__':
+    main()
